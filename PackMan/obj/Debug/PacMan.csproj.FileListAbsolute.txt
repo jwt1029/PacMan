@@ -1,0 +1,11 @@
+C:\Users\XenoAron\Documents\GitHub\PacMan\PackMan\bin\Debug\PackMan.exe.config
+C:\Users\XenoAron\Documents\GitHub\PacMan\PackMan\bin\Debug\PackMan.exe
+C:\Users\XenoAron\Documents\GitHub\PacMan\PackMan\bin\Debug\PackMan.pdb
+C:\Users\XenoAron\Documents\GitHub\PacMan\PackMan\obj\Debug\PacMan.csprojResolveAssemblyReference.cache
+C:\Users\XenoAron\Documents\GitHub\PacMan\PackMan\obj\Debug\PackMan.Form1.resources
+C:\Users\XenoAron\Documents\GitHub\PacMan\PackMan\obj\Debug\PackMan.Properties.Resources.resources
+C:\Users\XenoAron\Documents\GitHub\PacMan\PackMan\obj\Debug\PacMan.csproj.GenerateResource.Cache
+C:\Users\XenoAron\Documents\GitHub\PacMan\PackMan\obj\Debug\PackMan.exe
+C:\Users\XenoAron\Documents\GitHub\PacMan\PackMan\obj\Debug\PackMan.pdb
+C:\Users\XenoAron\Documents\GitHub\PacMan\PackMan\obj\Debug\PackMan.GameField.resources
+C:\Users\XenoAron\Documents\GitHub\PacMan\PackMan\obj\Debug\PackMan.MapEdit.resources
