@@ -331,7 +331,7 @@
             this.pictureBox299 = new System.Windows.Forms.PictureBox();
             this.mapList = new System.Windows.Forms.ImageList(this.components);
             this.player = new System.Windows.Forms.PictureBox();
-            this.userList = new System.Windows.Forms.ImageList(this.components);
+            this.playerList = new System.Windows.Forms.ImageList(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -3041,14 +3041,16 @@
             this.player.Size = new System.Drawing.Size(25, 25);
             this.player.TabIndex = 299;
             this.player.TabStop = false;
-            this.player.LocationChanged += new System.EventHandler(this.player_LocationChanged);
             // 
-            // userList
+            // playerList
             // 
-            this.userList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("userList.ImageStream")));
-            this.userList.TransparentColor = System.Drawing.Color.Transparent;
-            this.userList.Images.SetKeyName(0, "playerB.png");
-            this.userList.Images.SetKeyName(1, "playerA.png");
+            this.playerList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("playerList.ImageStream")));
+            this.playerList.TransparentColor = System.Drawing.Color.Transparent;
+            this.playerList.Images.SetKeyName(0, "playerB.png");
+            this.playerList.Images.SetKeyName(1, "playerA.png");
+            this.playerList.Images.SetKeyName(2, "playerLeft.png");
+            this.playerList.Images.SetKeyName(3, "playerDown.png");
+            this.playerList.Images.SetKeyName(4, "playerUp.png");
             // 
             // GameField
             // 
@@ -3358,6 +3360,8 @@
             this.Controls.Add(this.pictureBox22);
             this.Name = "GameField";
             this.Text = "GameField";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.GameField_FormClosed);
+            this.Load += new System.EventHandler(this.GameField_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.GameField_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -3966,6 +3970,6 @@
         private System.Windows.Forms.PictureBox pictureBox299;
         private System.Windows.Forms.ImageList mapList;
         private System.Windows.Forms.PictureBox player;
-        private System.Windows.Forms.ImageList userList;
+        private System.Windows.Forms.ImageList playerList;
     }
 }

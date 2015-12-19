@@ -17,15 +17,17 @@ namespace PackMan
         {
             InitializeComponent();
         }
-
+        GameField gm;
         private void button1_Click(object sender, EventArgs e)
         {
-            GameField gm = new GameField();
+            gm = new GameField();
             gm.Show();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
+            if(gm != null)
+                gm.Close();
             this.Close();
         }
 
