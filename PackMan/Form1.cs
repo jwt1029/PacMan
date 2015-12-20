@@ -22,6 +22,9 @@ namespace PackMan
         {
             gm = new GameField();
             gm.Show();
+            WMPLib.WindowsMediaPlayer wplayer = new WMPLib.WindowsMediaPlayer();
+            wplayer.URL = "Melody of The night.mp3";
+            wplayer.controls.play();
         }
 
         private void button2_Click(object sender, EventArgs e)

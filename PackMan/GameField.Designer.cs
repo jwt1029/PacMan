@@ -332,6 +332,19 @@
             this.mapList = new System.Windows.Forms.ImageList(this.components);
             this.player = new System.Windows.Forms.PictureBox();
             this.playerList = new System.Windows.Forms.ImageList(this.components);
+            this.monsterCount = new System.Windows.Forms.Timer(this.components);
+            this.monsterList = new System.Windows.Forms.ImageList(this.components);
+            this.monsterA = new System.Windows.Forms.PictureBox();
+            this.monsterB = new System.Windows.Forms.PictureBox();
+            this.monsterC = new System.Windows.Forms.PictureBox();
+            this.monsterD = new System.Windows.Forms.PictureBox();
+            this.youwin = new System.Windows.Forms.Label();
+            this.life1 = new System.Windows.Forms.PictureBox();
+            this.life2 = new System.Windows.Forms.PictureBox();
+            this.life3 = new System.Windows.Forms.PictureBox();
+            this.timeBoard = new System.Windows.Forms.TextBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.scoreBoard = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -632,6 +645,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox298)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox299)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.player)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.monsterA)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.monsterB)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.monsterC)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.monsterD)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.life1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.life2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.life3)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -3033,6 +3053,8 @@
             this.mapList.Images.SetKeyName(0, "food.png");
             this.mapList.Images.SetKeyName(1, "Empty.png");
             this.mapList.Images.SetKeyName(2, "block.png");
+            this.mapList.Images.SetKeyName(3, "cookie.png");
+            this.mapList.Images.SetKeyName(4, "monsterZone.png");
             // 
             // player
             // 
@@ -3052,12 +3074,132 @@
             this.playerList.Images.SetKeyName(3, "playerDown.png");
             this.playerList.Images.SetKeyName(4, "playerUp.png");
             // 
+            // monsterCount
+            // 
+            this.monsterCount.Interval = 1000;
+            this.monsterCount.Tick += new System.EventHandler(this.monsterCount_Tick);
+            // 
+            // monsterList
+            // 
+            this.monsterList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("monsterList.ImageStream")));
+            this.monsterList.TransparentColor = System.Drawing.Color.Transparent;
+            this.monsterList.Images.SetKeyName(0, "monster.png");
+            this.monsterList.Images.SetKeyName(1, "monsterDrunk.png");
+            // 
+            // monsterA
+            // 
+            this.monsterA.Location = new System.Drawing.Point(501, 12);
+            this.monsterA.Name = "monsterA";
+            this.monsterA.Size = new System.Drawing.Size(25, 25);
+            this.monsterA.TabIndex = 300;
+            this.monsterA.TabStop = false;
+            // 
+            // monsterB
+            // 
+            this.monsterB.Location = new System.Drawing.Point(526, 12);
+            this.monsterB.Name = "monsterB";
+            this.monsterB.Size = new System.Drawing.Size(25, 25);
+            this.monsterB.TabIndex = 300;
+            this.monsterB.TabStop = false;
+            // 
+            // monsterC
+            // 
+            this.monsterC.Location = new System.Drawing.Point(551, 12);
+            this.monsterC.Name = "monsterC";
+            this.monsterC.Size = new System.Drawing.Size(25, 25);
+            this.monsterC.TabIndex = 300;
+            this.monsterC.TabStop = false;
+            // 
+            // monsterD
+            // 
+            this.monsterD.Location = new System.Drawing.Point(576, 12);
+            this.monsterD.Name = "monsterD";
+            this.monsterD.Size = new System.Drawing.Size(25, 25);
+            this.monsterD.TabIndex = 300;
+            this.monsterD.TabStop = false;
+            // 
+            // youwin
+            // 
+            this.youwin.AutoSize = true;
+            this.youwin.BackColor = System.Drawing.Color.White;
+            this.youwin.Font = new System.Drawing.Font("Futura XBlk BT", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.youwin.Location = new System.Drawing.Point(214, 162);
+            this.youwin.Name = "youwin";
+            this.youwin.Size = new System.Drawing.Size(193, 45);
+            this.youwin.TabIndex = 301;
+            this.youwin.Text = "You Win!";
+            this.youwin.Visible = false;
+            // 
+            // life1
+            // 
+            this.life1.Image = ((System.Drawing.Image)(resources.GetObject("life1.Image")));
+            this.life1.Location = new System.Drawing.Point(632, 340);
+            this.life1.Name = "life1";
+            this.life1.Size = new System.Drawing.Size(25, 25);
+            this.life1.TabIndex = 302;
+            this.life1.TabStop = false;
+            // 
+            // life2
+            // 
+            this.life2.Image = ((System.Drawing.Image)(resources.GetObject("life2.Image")));
+            this.life2.Location = new System.Drawing.Point(672, 340);
+            this.life2.Name = "life2";
+            this.life2.Size = new System.Drawing.Size(25, 25);
+            this.life2.TabIndex = 302;
+            this.life2.TabStop = false;
+            // 
+            // life3
+            // 
+            this.life3.Image = ((System.Drawing.Image)(resources.GetObject("life3.Image")));
+            this.life3.Location = new System.Drawing.Point(712, 340);
+            this.life3.Name = "life3";
+            this.life3.Size = new System.Drawing.Size(25, 25);
+            this.life3.TabIndex = 302;
+            this.life3.TabStop = false;
+            // 
+            // timeBoard
+            // 
+            this.timeBoard.Enabled = false;
+            this.timeBoard.Font = new System.Drawing.Font("Stencil Std", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.timeBoard.Location = new System.Drawing.Point(623, 199);
+            this.timeBoard.Multiline = true;
+            this.timeBoard.Name = "timeBoard";
+            this.timeBoard.Size = new System.Drawing.Size(117, 41);
+            this.timeBoard.TabIndex = 303;
+            this.timeBoard.Text = " 00 : 00";
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // scoreBoard
+            // 
+            this.scoreBoard.Enabled = false;
+            this.scoreBoard.Font = new System.Drawing.Font("Stencil Std", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.scoreBoard.Location = new System.Drawing.Point(623, 140);
+            this.scoreBoard.Multiline = true;
+            this.scoreBoard.Name = "scoreBoard";
+            this.scoreBoard.Size = new System.Drawing.Size(117, 41);
+            this.scoreBoard.TabIndex = 303;
+            this.scoreBoard.Text = " 00000 ";
+            // 
             // GameField
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.ClientSize = new System.Drawing.Size(626, 391);
+            this.ClientSize = new System.Drawing.Size(765, 391);
+            this.Controls.Add(this.scoreBoard);
+            this.Controls.Add(this.timeBoard);
+            this.Controls.Add(this.life3);
+            this.Controls.Add(this.life2);
+            this.Controls.Add(this.life1);
+            this.Controls.Add(this.youwin);
+            this.Controls.Add(this.monsterD);
+            this.Controls.Add(this.monsterC);
+            this.Controls.Add(this.monsterB);
+            this.Controls.Add(this.monsterA);
             this.Controls.Add(this.player);
             this.Controls.Add(this.pictureBox277);
             this.Controls.Add(this.pictureBox278);
@@ -3358,6 +3500,7 @@
             this.Controls.Add(this.pictureBox20);
             this.Controls.Add(this.pictureBox21);
             this.Controls.Add(this.pictureBox22);
+            this.DoubleBuffered = true;
             this.Name = "GameField";
             this.Text = "GameField";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.GameField_FormClosed);
@@ -3663,7 +3806,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox298)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox299)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.player)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.monsterA)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.monsterB)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.monsterC)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.monsterD)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.life1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.life2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.life3)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -3971,5 +4122,18 @@
         private System.Windows.Forms.ImageList mapList;
         private System.Windows.Forms.PictureBox player;
         private System.Windows.Forms.ImageList playerList;
+        private System.Windows.Forms.Timer monsterCount;
+        private System.Windows.Forms.ImageList monsterList;
+        private System.Windows.Forms.PictureBox monsterA;
+        private System.Windows.Forms.PictureBox monsterB;
+        private System.Windows.Forms.PictureBox monsterC;
+        private System.Windows.Forms.PictureBox monsterD;
+        private System.Windows.Forms.Label youwin;
+        private System.Windows.Forms.PictureBox life1;
+        private System.Windows.Forms.PictureBox life2;
+        private System.Windows.Forms.PictureBox life3;
+        private System.Windows.Forms.TextBox timeBoard;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.TextBox scoreBoard;
     }
 }

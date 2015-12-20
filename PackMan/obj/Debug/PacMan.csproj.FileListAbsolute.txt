@@ -9,3 +9,6 @@ C:\Users\XenoAron\Documents\GitHub\PacMan\PackMan\obj\Debug\PackMan.exe
 C:\Users\XenoAron\Documents\GitHub\PacMan\PackMan\obj\Debug\PackMan.pdb
 C:\Users\XenoAron\Documents\GitHub\PacMan\PackMan\obj\Debug\PackMan.GameField.resources
 C:\Users\XenoAron\Documents\GitHub\PacMan\PackMan\obj\Debug\PackMan.MapEdit.resources
+C:\Users\XenoAron\Documents\GitHub\PacMan\PackMan\obj\Debug\PackMan.Pause.resources
+C:\Users\XenoAron\Documents\GitHub\PacMan\PackMan\obj\Debug\Interop.WMPLib.dll
+C:\Users\XenoAron\Documents\GitHub\PacMan\PackMan\obj\Debug\PacMan.csproj.ResolveComReference.cache
