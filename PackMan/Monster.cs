@@ -170,6 +170,7 @@ namespace PackMan
         public void dead()
         {
             alive = false;
+            start = true;
             image.Visible = false;
             image.Location = new Point(0, 0);
             revive = 10;
